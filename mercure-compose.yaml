@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    mercure:
+        image: dunglas/mercure
+        environment:
+            DEBUG: "debug"
+            SERVER_NAME: ':80'
+            MERCURE_PUBLISHER_JWT_KEY: '!ChangeThisMercureHubJWTSecretKey!'
+            MERCURE_SUBSCRIBER_JWT_KEY: '!ChangeThisMercureHubJWTSecretKey!'
+            MERCURE_EXTRA_DIRECTIVES: |-
+                cors_origins "*"
+                anonymous
+        ports:
+            - "9090:80"
