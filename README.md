@@ -26,6 +26,12 @@ services:
                 anonymous
         ports:
             - "9090:80"
+        volumes:
+            - mercure_data:/data
+            - mercure_config:/config
+volumes:
+  mercure_data:
+  mercure_config:
 ```
 
 ## Installation
